@@ -1,3 +1,25 @@
-<div class="page-content">
-  <p>about works!</p>
+<div class="page-content" style="display: flex; align-items: center; flex-direction: column">
+  <h1>This is an attribute</h1>
+  <br>
+
+  <h2>Pick a color</h2>
+  <br>
+
+  <div>
+    <input type="radio" name="colors" (click)="color = 'navy'">Navy
+    <input type="radio" name="colors" (click)="color = 'hotpink'">Hot Pink
+    <input type="radio" name="colors" (click)="color = 'cyan'">Cyan
+  </div>
+  <br>
+  <p [appHighlight]="color" defaultColor="red">Highlight me</p>
+  <p>Use ngNonBindable to stop evaluation.</p>
+  <p>This should evaluate: {{ 1 + 1 }}</p>
+  <p ngNonBindable [appHighlight]="'yellow'">This should not evaluate: {{ 1 + 1 }}</p>
+
+
+  <div class="container">
+    <div class="box" appDraggableDirective>Box 1</div>
+    <div class="box" appDraggableDirective>Box 2</div>
+    <div class="box" appDraggableDirective>Box 3</div>
+  </div>
 </div>
